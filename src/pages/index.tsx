@@ -1,12 +1,10 @@
 import { type NextPage } from "next";
 import Head from "next/head";
-import Link from "next/link";
-import { signIn, signOut, useSession } from "next-auth/react";
-
-import { api, RouterOutputs } from "~/utils/api";
+import { useSession } from "next-auth/react";
+import { api } from "~/utils/api";
 import { Header } from "~/components/Header";
 import { useState } from "react";
-import { Topic } from "@prisma/client";
+import type { Topic } from "@prisma/client";
 import {NodeEditor} from "~/components/NodeEditor";
 import {NoteCard} from "~/components/NoteCard";
 
@@ -106,7 +104,7 @@ const Content: React.FC = () => {
       <div className="col-span-3">
           <div>
               {notes?.map(note => (
-                  <div>
+                  <div key={note.id} className="mt-5">
                       <NoteCard note={note} onDelete={() => deleteNote.mutate({id: note.id})}/>
                   </div>
               ))}

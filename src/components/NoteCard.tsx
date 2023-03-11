@@ -1,4 +1,4 @@
-import {Note} from "@prisma/client";
+import type {Note} from "@prisma/client";
 import {useState} from "react";
 import ReactMarkdown from "react-markdown";
 
