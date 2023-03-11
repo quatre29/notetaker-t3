@@ -107,7 +107,7 @@ const Content: React.FC = () => {
           <div>
               {notes?.map(note => (
                   <div>
-                      <NoteCard note={note} onDelete={() => deleteNote.mutate({id: note.id})!}/>
+                      <NoteCard note={note} onDelete={() => deleteNote.mutate({id: note.id})}/>
                   </div>
               ))}
           </div>

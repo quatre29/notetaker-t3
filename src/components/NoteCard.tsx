@@ -4,7 +4,7 @@ import ReactMarkdown from "react-markdown";
 
 interface NoteCardProps {
     note: Note,
-    onDelete: () => {}
+    onDelete: () => void
 }
 export const NoteCard = ({ note, onDelete }: NoteCardProps): JSX.Element => {
     const [isExpanded, setIsExpanded] = useState<boolean>(false)
